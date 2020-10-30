@@ -22,6 +22,8 @@ public:
 	void append(node* list2); //exercise 4
 	void backwardsPrint();
 	void removeDuplicates();
+	void removeThirdDup(); //exercise 6: if we have 3 elements of the same value we remove the first
+	void backwardsSum(); //exercise 7: adds an element equal to the sum of all and make it backwards
 };
 
 void DLL::backwardsPrint() {
@@ -181,3 +183,58 @@ void DLL::removeDuplicates() {
 
 }
 //=====================================
+//exercise 6: if we have 3 elements of the same value we remove the first
+void DLL::removeThirdDup() {
+	if (head == nullptr) {
+		cout << "List is empty" << endl;
+		return;
+	}
+
+	node* temp = head->next;
+
+	while (temp->next != nullptr) {
+
+		if (temp->data == temp->prev->data && temp->data == temp->next->data) {
+			temp->prev->next = temp->next;
+			temp->next->prev = temp->prev;
+			
+		}
+		temp = temp->next;
+	}
+}
+//=====================================
+//exercise 7: adds an element equal to the sum of all and make it backwards
+void DLL::backwardsSum() {
+
+	if (head == nullptr) {
+		cout << "list is empty" << endl;
+		return;
+	}
+
+	int sum = 0;
+	node* temp1 = head;
+	while (temp1 != nullptr) {
+		sum += temp1->data; //sum of all nodes
+		temp1 = temp1->next;
+	}
+	this->addEnd(sum);
+
+	
+	node* temp = nullptr;
+	node* current = head;
+
+	while (current != NULL) { //we reverse the list
+
+		//we change the prev and next of current nodes
+		temp = current->prev;
+		current->prev = current->next;
+		current->next = temp;
+		//========
+
+		current = current->prev;
+	}
+
+	if (temp != nullptr) {
+		head = temp->prev;
+	}
+}

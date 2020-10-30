@@ -25,23 +25,12 @@ void print(node* head) {
 int main() {
 	DLL a;
 	a.addEnd(5);
+	a.addEnd(5);
+	a.addEnd(5);
 	a.addEnd(1);
 	a.addEnd(2);
-	a.addEnd(5);
-	a.addEnd(7);
-	a.addEnd(7);
-	a.addEnd(3);
-	a.addEnd(4);
-	a.addEnd(4);
-	a.addEnd(4);
-	a.addEnd(5);
-	a.addEnd(6);
-	a.addEnd(7);
 
 	a.print();
-
-	cout << "removing duplicates" << endl;
-
-	a.removeDuplicates();
+	a.backwardsSum();
 	a.print();
 }
