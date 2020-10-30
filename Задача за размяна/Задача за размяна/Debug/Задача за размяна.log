@@ -1,0 +1,4 @@
+﻿  Source.cpp
+C:\Users\Pavel Romanov\Desktop\C++ code\Задача за размяна\Задача за размяна\Source.cpp(23,16): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Pavel Romanov\Desktop\C++ code\Задача за размяна\Задача за размяна\Source.cpp(63,16): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  Задача за размяна.vcxproj -> C:\Users\Pavel Romanov\Desktop\C++ code\Задача за размяна\Debug\Задача за размяна.exe
