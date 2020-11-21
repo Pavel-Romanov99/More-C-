@@ -1,20 +1,39 @@
-#include "Implementation.h"
+//#include "Implementation.h"
+#include <iostream>
+using namespace std;
+
+struct node {
+	int data;
+	node* next;
+};
+
+void addBeginning(node** head, int data) {
+	
+	node* temp = new node();
+	temp->data = data;
+
+	if (head == nullptr) {
+		(*head) = temp;
+		return;
+	}
+
+	temp->next = (*head);
+	(*head) = temp;
+}
+
+void printList(node* head) {
+	node* temp = head;
+	while (temp != nullptr) {
+		cout << temp->data << " ";
+		temp = temp->next;
+	}
+}
 
 int main() {
-	LinkedList<int> l;
-	l.add(4);
-	l.add(4);
-	l.add(4);
-	l.add(2);
-	l.add(2);
-	l.add(2);
-	l.add(2);
-	l.add(5);
-	l.add(6);
-	l.add(6);
-	l.add(6);
-	cout << "list l = ";
-	l.print(); 
-	l.sumReverse();
-	l.print();
+	
+	node* head = nullptr;
+	addBeginning(&head, 2);
+	addBeginning(&head, 3);
+	addBeginning(&head, 4);
+	printList(head);
 }

@@ -1,0 +1,2 @@
+﻿  Source.cpp
+C:\Users\Pavel Romanov\Desktop\SDP code\Kontrolno\Kontrolno\Source.cpp(164): error C4700: uninitialized local variable 'head2' used
